@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import {
   ChevronLeft,
-  Play,
   CheckCircle,
   Clock,
   LayoutDashboard,

@@ -1,0 +1,186 @@
+@reference "../index.css";
+
+.container {
+  @apply min-h-screen bg-[#0D0D0D] text-white flex font-sans;
+}
+
+/* Sidebar */
+.sidebar {
+  @apply hidden lg:flex w-72 bg-[#111] border-r border-white/5 flex-col p-8 sticky top-0 h-screen;
+}
+
+.logo {
+  @apply text-2xl font-black tracking-tighter italic mb-12;
+}
+
+.logoAccent {
+  @apply text-[#4D6CFA];
+}
+
+.nav {
+  @apply space-y-6 flex-1;
+}
+
+.navLinkActive {
+  @apply flex items-center gap-4 text-[#4D6CFA] font-bold;
+}
+
+.navLink {
+  @apply flex items-center gap-4 text-gray-500 hover:text-white transition font-bold;
+}
+
+.progressWidget {
+  @apply mt-auto bg-blue-500/10 p-6 rounded-[30px] border border-blue-500/20;
+}
+
+.progressLabel {
+  @apply text-[#4D6CFA] text-[10px] font-black uppercase tracking-widest mb-2;
+}
+
+.progressHeader {
+  @apply flex justify-between items-end mb-2;
+}
+
+.progressValue {
+  @apply text-2xl font-black;
+}
+
+.progressCount {
+  @apply text-[10px] text-gray-500 font-bold;
+}
+
+.progressBarContainer {
+  @apply h-1.5 bg-white/5 rounded-full overflow-hidden;
+}
+
+.progressBarFill {
+  @apply h-full bg-[#4D6CFA] transition-all duration-700;
+}
+
+/* Main Content */
+.main {
+  @apply flex-1 pb-32 lg:pb-12;
+}
+
+.header {
+  @apply p-6 md:p-12 border-b border-white/5 bg-[#0D0D0D]/50 backdrop-blur-xl sticky top-0 z-40;
+}
+
+.headerInner {
+  @apply max-w-5xl mx-auto flex justify-between items-center;
+}
+
+.headerTitleWrapper {
+  @apply flex items-center gap-6;
+}
+
+.backBtn {
+  @apply p-3 bg-white/5 rounded-2xl text-gray-400 hover:text-white transition hover:scale-105;
+}
+
+.routineTitle {
+  @apply text-2xl md:text-3xl font-black italic uppercase tracking-tighter leading-none;
+}
+
+.routineSubtitle {
+  @apply text-[10px] font-bold text-gray-500 uppercase tracking-[0.3em] mt-1;
+}
+
+.timerWidget {
+  @apply hidden md:flex items-center gap-4 bg-[#151515] px-6 py-3 rounded-2xl border border-white/5 shadow-lg;
+}
+
+.timerIcon {
+  @apply text-[#4D6CFA];
+}
+
+.timerValue {
+  @apply font-black tracking-widest;
+}
+
+/* Content Area */
+.contentArea {
+  @apply p-6 md:p-12 max-w-5xl mx-auto;
+}
+
+.grid {
+  @apply grid grid-cols-1 lg:grid-cols-12 gap-12;
+}
+
+.col8 {
+  @apply lg:col-span-8 space-y-8;
+}
+
+.col4 {
+  @apply hidden lg:block lg:col-span-4 space-y-8 sticky top-40 h-fit;
+}
+
+/* Summary Card */
+.summaryCard {
+  @apply bg-[#151515] p-8 rounded-[40px] border border-white/5 shadow-xl;
+}
+
+.summaryTitle {
+  @apply text-[9px] font-black uppercase tracking-[0.3em] text-gray-600 mb-8;
+}
+
+.summaryList {
+  @apply space-y-6;
+}
+
+.summaryRow {
+  @apply flex justify-between items-center;
+}
+
+.summaryLabel {
+  @apply text-gray-400 text-xs font-bold uppercase tracking-tight;
+}
+
+.summaryValue {
+  @apply font-black;
+}
+
+.summaryValueAccent {
+  @apply font-black text-[#4D6CFA];
+}
+
+.summaryValueItalic {
+  @apply font-black italic;
+}
+
+.finishBtnBase {
+  @apply w-full py-8 rounded-[35px] font-black uppercase text-[11px] tracking-[0.2em] transition-all;
+}
+
+.finishBtnActive {
+  @apply bg-white text-black shadow-[0_20px_50px_rgba(255,255,255,0.2)] hover:scale-[1.02];
+}
+
+.finishBtnDisabled {
+  @apply bg-white/5 text-gray-700 cursor-not-allowed;
+}
+
+/* Mobile Nav */
+.mobileNav {
+  @apply lg:hidden fixed bottom-0 left-0 right-0 bg-[#0D0D0D]/90 backdrop-blur-xl border-t border-white/5 px-8 py-6 z-50 flex justify-between items-center text-gray-500;
+}
+
+.mobileNavLink {
+  @apply hover:text-white transition;
+}
+
+.mobileNavActive {
+  @apply text-[#4D6CFA];
+}
+
+.mobileFinishBtnBase {
+  @apply w-14 h-14 rounded-2xl -mt-14 flex items-center justify-center shadow-xl transition-all;
+}
+
+.mobileFinishBtnActive {
+  @apply bg-green-500 text-white shadow-green-500/20;
+}
+
+.mobileFinishBtnDisabled {
+  @apply bg-white/5 text-gray-600 border border-white/5;
+}

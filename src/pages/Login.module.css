@@ -1,0 +1,101 @@
+@reference "../index.css";
+
+.container {
+  @apply min-h-screen w-full bg-[#0D0D0D] text-white flex flex-col items-center justify-center p-6;
+}
+
+.backLink {
+  @apply absolute top-8 left-8 flex items-center gap-2 text-gray-400 hover:text-white transition;
+}
+
+.card {
+  @apply w-full max-w-md bg-[#151515] p-10 rounded-[40px] border border-white/5 shadow-2xl relative overflow-hidden;
+}
+
+.progressBar {
+  @apply absolute top-0 left-0 h-1 bg-[#4D6CFA] animate-[progress_2s_ease-in-out_infinite] w-full;
+}
+
+@keyframes progress {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+.header {
+  @apply flex flex-col items-center mb-10;
+}
+
+.iconWrapper {
+  @apply bg-[#4D6CFA]/20 p-4 rounded-2xl text-[#4D6CFA] mb-4;
+}
+
+.title {
+  @apply text-3xl font-black uppercase tracking-tighter;
+}
+
+.titleAccent {
+  @apply text-[#4D6CFA];
+}
+
+.errorBox {
+  @apply mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center gap-3 text-red-500 text-sm animate-[shake_0.5s_ease-in-out];
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.form {
+  @apply space-y-6;
+}
+
+.inputGroup {
+  @apply space-y-2;
+}
+
+.label {
+  @apply text-xs uppercase font-bold tracking-widest text-gray-400 ml-1;
+}
+
+.inputWrapper {
+  @apply relative;
+}
+
+.inputIcon {
+  @apply absolute left-4 top-1/2 -translate-y-1/2 transition-colors;
+}
+
+.inputIconError {
+  @apply text-red-500;
+}
+
+.inputIconNormal {
+  @apply text-gray-500;
+}
+
+.inputBase {
+  @apply w-full bg-[#0D0D0D] border rounded-2xl py-4 pl-12 pr-4 text-white placeholder-gray-600 transition-all duration-300 focus:outline-none focus:ring-4;
+}
+
+.inputError {
+  @apply border-red-500/50 focus:ring-red-500/10 focus:shadow-[0_0_20px_rgba(239,68,68,0.2)];
+}
+
+.inputNormal {
+  @apply border-white/10 focus:border-[#4D6CFA] focus:ring-[#4D6CFA]/10 focus:shadow-[0_0_20px_rgba(77,108,250,0.3)];
+}
+
+.submitBtnBase {
+  @apply w-full font-black py-4 rounded-2xl transition-all duration-300 transform shadow-lg active:scale-95;
+}
+
+.submitBtnLoading {
+  @apply bg-gray-700 cursor-not-allowed;
+}
+
+.submitBtnActive {
+  @apply bg-[#4D6CFA] hover:bg-blue-600 hover:scale-[1.02] shadow-blue-900/20;
+}

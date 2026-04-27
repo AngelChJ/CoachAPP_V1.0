@@ -1,0 +1,280 @@
+@reference "../index.css";
+
+.container {
+  @apply min-h-screen bg-[#0D0D0D] text-white flex;
+}
+
+/* Sidebar */
+.sidebar {
+  @apply hidden lg:flex w-72 bg-[#111] border-r border-white/5 flex-col p-8 sticky top-0 h-screen;
+}
+
+.logo {
+  @apply text-2xl font-black tracking-tighter italic mb-12;
+}
+
+.logoAccent {
+  @apply text-[#4D6CFA];
+}
+
+.nav {
+  @apply space-y-6 flex-1;
+}
+
+.navLink {
+  @apply flex items-center gap-4 text-gray-500 hover:text-white transition font-bold;
+}
+
+.navLinkActive {
+  @apply flex items-center gap-4 text-[#4D6CFA] font-bold;
+}
+
+.settingsBtn {
+  @apply flex items-center gap-4 text-gray-600 text-xs font-black uppercase tracking-widest mt-auto hover:text-white transition;
+}
+
+/* Main Content */
+.main {
+  @apply flex-1 pb-32 lg:pb-12;
+}
+
+.header {
+  @apply p-8 md:p-16 max-w-6xl mx-auto;
+}
+
+.profileInfo {
+  @apply flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-16;
+}
+
+.avatarWrapper {
+  @apply relative;
+}
+
+.avatar {
+  @apply w-32 h-32 md:w-44 md:h-44 bg-gradient-to-tr from-[#4D6CFA] to-blue-400 rounded-[50px] flex items-center justify-center shadow-2xl shadow-blue-500/20 border-4 border-white/5;
+}
+
+.cameraBtn {
+  @apply absolute -bottom-2 -right-2 bg-white text-black p-3 rounded-2xl shadow-xl hover:scale-110 transition;
+}
+
+.userInfo {
+  @apply text-center md:text-left;
+}
+
+.nameWrapper {
+  @apply flex flex-col md:flex-row items-center gap-4 mb-4;
+}
+
+.name {
+  @apply text-4xl md:text-6xl font-black uppercase italic tracking-tighter;
+}
+
+.nameLast {
+  @apply text-gray-600;
+}
+
+.badge {
+  @apply bg-[#4D6CFA] px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest;
+}
+
+.bio {
+  @apply text-gray-500 font-medium max-w-md uppercase text-xs tracking-widest mb-6;
+}
+
+.stats {
+  @apply flex gap-6 justify-center md:justify-start;
+}
+
+.statValue {
+  @apply font-black text-xl;
+}
+
+.statLabel {
+  @apply text-[10px] text-gray-600 uppercase font-bold tracking-widest;
+}
+
+.divider {
+  @apply w-px h-8 bg-white/10;
+}
+
+/* Grid layout */
+.grid {
+  @apply grid grid-cols-1 lg:grid-cols-12 gap-8;
+}
+
+.col7 {
+  @apply lg:col-span-7 space-y-8;
+}
+
+.col5 {
+  @apply lg:col-span-5 space-y-8;
+}
+
+.sectionTitle {
+  @apply text-sm font-black uppercase tracking-[0.3em] italic flex items-center gap-3;
+}
+
+.sectionTitleIcon {
+  @apply text-[#4D6CFA];
+}
+
+.viewAllBtn {
+  @apply text-[10px] font-black text-gray-500 hover:text-white uppercase tracking-widest;
+}
+
+/* PR Cards */
+.prGrid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6;
+}
+
+.prCard {
+  @apply bg-[#151515] p-8 rounded-[40px] border border-white/5 relative overflow-hidden transition-all duration-500 shadow-[0_0_40px_rgba(255,255,255,0.03)] hover:shadow-[0_0_50px_rgba(255,255,255,0.1)] hover:border-white/20;
+}
+
+.prIconBg {
+  @apply absolute -right-4 -top-4 opacity-5 transition-opacity;
+}
+.prCard:hover .prIconBg {
+  @apply opacity-20;
+}
+
+.prIconWrapper {
+  @apply mb-6 p-3 bg-white/5 w-fit rounded-2xl;
+}
+
+.prName {
+  @apply text-[10px] text-gray-600 font-black uppercase tracking-widest mb-1;
+}
+
+.prWeight {
+  @apply text-3xl font-black text-white;
+}
+
+.prUnit {
+  @apply text-xs ml-1 text-[#4D6CFA];
+}
+
+.prDate {
+  @apply text-[9px] text-gray-700 font-bold uppercase mt-4;
+}
+
+/* Heatmap */
+.heatmapCard {
+  @apply bg-[#111] p-8 rounded-[45px] border border-white/5;
+}
+
+.heatmapHeader {
+  @apply flex justify-between items-center mb-8;
+}
+
+.heatmapTitle {
+  @apply text-xs font-black uppercase tracking-[0.3em] text-gray-400;
+}
+
+.heatmapLegend {
+  @apply flex gap-1;
+}
+
+.heatmapLegendItem {
+  @apply w-2 h-2 rounded-sm;
+}
+
+.heatmapLegendActive {
+  @apply bg-[#4D6CFA];
+}
+
+.heatmapLegendInactive {
+  @apply bg-white/5;
+}
+
+.heatmapGrid {
+  @apply flex flex-wrap gap-2 justify-between;
+}
+
+.heatmapBox {
+  @apply w-6 h-6 md:w-8 md:h-8 rounded-lg transition-all duration-500 hover:scale-110 cursor-pointer;
+}
+
+.heatmapBoxHigh {
+  @apply bg-[#4D6CFA] shadow-[0_0_10px_#4D6CFA];
+}
+
+.heatmapBoxMed {
+  @apply bg-blue-900/30;
+}
+
+.heatmapBoxLow {
+  @apply bg-white/5;
+}
+
+.heatmapFooter {
+  @apply text-[9px] text-gray-700 font-bold uppercase mt-6 text-center tracking-widest;
+}
+
+/* Evolution Section */
+.evolutionCard {
+  @apply bg-[#151515] p-8 rounded-[45px] border border-white/5 h-full;
+}
+
+.evolutionContainer {
+  @apply space-y-12;
+}
+
+.evolutionRow {
+  @apply flex justify-between items-center;
+}
+
+.evolutionLabel {
+  @apply text-[10px] text-gray-600 font-black uppercase tracking-widest mb-1;
+}
+
+.evolutionValue {
+  @apply text-4xl font-black italic;
+}
+
+.evolutionUnit {
+  @apply text-xs text-gray-500 font-normal ml-2;
+}
+
+.trendUp {
+  @apply bg-green-500/10 text-green-500 p-4 rounded-3xl flex flex-col items-center;
+}
+
+.trendDown {
+  @apply bg-blue-500/10 text-blue-500 p-4 rounded-3xl flex flex-col items-center;
+}
+
+.trendValue {
+  @apply text-[10px] font-black;
+}
+
+/* Achievement */
+.achievementCard {
+  @apply mt-12 bg-white p-8 rounded-[40px] flex items-center gap-6 cursor-pointer hover:rotate-1;
+}
+
+.achievementIcon {
+  @apply w-16 h-16 bg-[#0D0D0D] rounded-[25px] flex items-center justify-center;
+}
+
+.achievementTitle {
+  @apply text-black font-black uppercase text-sm tracking-tighter;
+}
+
+.achievementDesc {
+  @apply text-gray-500 text-[10px] font-bold uppercase;
+}
+
+/* Mobile Nav */
+.mobileNav {
+  @apply lg:hidden fixed bottom-0 left-0 right-0 bg-[#0D0D0D]/90 backdrop-blur-xl border-t border-white/5 px-8 py-6 z-50 flex justify-between items-center text-gray-500;
+}
+
+.mobileNavCenter {
+  @apply w-14 h-14 bg-white rounded-2xl -mt-14 flex items-center justify-center text-black shadow-xl;
+}
+
+.mobileNavActive {
+  @apply text-[#4D6CFA];
+}

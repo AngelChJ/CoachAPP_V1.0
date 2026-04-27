@@ -1,0 +1,194 @@
+@reference "../index.css";
+
+.container {
+  @apply min-h-screen bg-[#0D0D0D] text-white flex font-sans;
+}
+
+/* Sidebar */
+.sidebar {
+  @apply hidden lg:flex w-72 bg-[#111] border-r border-white/5 flex-col p-8 sticky top-0 h-screen;
+}
+
+.logo {
+  @apply text-2xl font-black tracking-tighter italic mb-12;
+}
+
+.logoAccent {
+  @apply text-[#4D6CFA];
+}
+
+.nav {
+  @apply space-y-6 flex-1;
+}
+
+.navLink {
+  @apply flex items-center gap-4 text-gray-500 hover:text-white transition font-bold;
+}
+
+.navLinkActive {
+  @apply flex items-center gap-4 text-[#4D6CFA] font-bold;
+}
+
+/* Main Content */
+.main {
+  @apply flex-1 pb-32 lg:pb-12;
+}
+
+.header {
+  @apply p-8 md:p-16 max-w-5xl mx-auto;
+}
+
+.headerTop {
+  @apply flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12;
+}
+
+.title {
+  @apply text-4xl md:text-6xl font-black uppercase italic tracking-tighter;
+}
+
+.titleBr {
+  @apply md:hidden;
+}
+
+.titleAccent {
+  @apply text-[#4D6CFA];
+}
+
+.subtitle {
+  @apply text-gray-500 text-[10px] font-bold uppercase tracking-[0.3em] mt-2;
+}
+
+.filterBtn {
+  @apply flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-2xl text-xs font-black uppercase tracking-widest hover:bg-white/10 transition;
+}
+
+/* Grid Layout */
+.grid {
+  @apply grid grid-cols-1 lg:grid-cols-12 gap-12;
+}
+
+/* Timeline / Sessions */
+.col8 {
+  @apply lg:col-span-8 space-y-6;
+}
+
+.sessionCard {
+  @apply bg-[#151515] p-6 md:p-8 rounded-[35px] border border-white/5 transition-all duration-500 flex flex-col md:flex-row justify-between items-center gap-6 relative overflow-hidden hover:border-[#4D6CFA]/30;
+}
+
+.sessionHoverLine {
+  @apply absolute left-0 top-0 bottom-0 w-1 bg-[#4D6CFA] opacity-0 transition-opacity;
+}
+.sessionCard:hover .sessionHoverLine {
+  @apply opacity-100;
+}
+
+.sessionInfo {
+  @apply flex items-center gap-6 w-full md:w-auto;
+}
+
+.sessionIconWrapper {
+  @apply bg-white/5 p-4 rounded-2xl text-[#4D6CFA] transition-transform;
+}
+.sessionCard:hover .sessionIconWrapper {
+  @apply scale-110;
+}
+
+.sessionDate {
+  @apply text-[10px] text-gray-500 font-bold uppercase tracking-widest;
+}
+
+.sessionName {
+  @apply text-xl font-black uppercase italic tracking-tight;
+}
+
+.sessionStats {
+  @apply grid grid-cols-3 gap-8 w-full md:w-auto border-t md:border-t-0 md:border-l border-white/5 pt-6 md:pt-0 md:pl-8;
+}
+
+.statLabel {
+  @apply text-[9px] text-gray-600 font-black uppercase;
+}
+
+.statValue {
+  @apply font-bold text-sm italic;
+}
+
+.intensityWrapper {
+  @apply flex items-center gap-2;
+}
+
+.intensityIcon {
+  @apply p-1 bg-green-500/10 text-green-500 rounded-md;
+}
+
+.intensityValue {
+  @apply font-bold text-sm italic text-green-500;
+}
+
+.chevronBtn {
+  @apply p-4 bg-white/5 rounded-2xl text-gray-500 hover:text-white hover:bg-[#4D6CFA] transition-all;
+}
+
+/* Summary Panel */
+.col4 {
+  @apply lg:col-span-4 space-y-8;
+}
+
+.summaryCard {
+  @apply bg-gradient-to-br from-[#111] to-[#080808] p-8 rounded-[45px] border border-white/5;
+}
+
+.summaryIconWrapper {
+  @apply w-12 h-12 bg-blue-500/10 text-[#4D6CFA] rounded-2xl flex items-center justify-center mb-6;
+}
+
+.summaryTitle {
+  @apply text-lg font-black uppercase italic mb-8;
+}
+
+.summaryList {
+  @apply space-y-6;
+}
+
+.summaryRow {
+  @apply flex justify-between;
+}
+
+.summaryRowBorder {
+  @apply flex justify-between border-t border-white/5 pt-6;
+}
+
+.summaryLabel {
+  @apply text-gray-500 text-xs font-bold uppercase;
+}
+
+.summaryValue {
+  @apply font-black;
+}
+
+.summaryValueAccent {
+  @apply font-black text-[#4D6CFA];
+}
+
+/* Suggestion Card */
+.suggestionCard {
+  @apply bg-[#4D6CFA] p-8 rounded-[40px] shadow-2xl shadow-blue-500/20;
+}
+
+.suggestionTitle {
+  @apply text-black font-black uppercase italic text-sm mb-2;
+}
+
+.suggestionDesc {
+  @apply text-blue-900 text-[10px] font-bold uppercase leading-relaxed;
+}
+
+/* Mobile Nav */
+.mobileNav {
+  @apply lg:hidden fixed bottom-0 left-0 right-0 bg-[#0D0D0D]/90 backdrop-blur-xl border-t border-white/5 px-8 py-6 z-50 flex justify-between items-center text-gray-500;
+}
+
+.mobileNavActive {
+  @apply text-[#4D6CFA];
+}

@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Esto elimina los márgenes raros y asegura que el fondo sea negro */
+:root {
+  background-color: #0D0D0D;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* El efecto de borde en el texto */
+@layer utilities {
+  .stroke-text {
+    -webkit-text-stroke: 1.5px white;
+  }
+}
+@keyframes progress-bar {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+.animate-progress-bar {
+  animation: progress-bar 1.5s ease-in-out;
+}

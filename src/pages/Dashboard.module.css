@@ -1,6 +1,5 @@
 /* src/pages/Dashboard.module.css */
 @reference "tailwindcss";
-
 .container {
   @apply min-h-screen bg-[#0D0D0D] text-white flex font-sans;
 }
@@ -135,7 +134,7 @@
 }
 
 .chartBarContainer {
-  @apply flex-1 flex flex-col items-center gap-4 group;
+  @apply flex-1 flex flex-col items-center gap-4;
 }
 
 .chartBar {
@@ -147,16 +146,24 @@
 }
 
 .chartBarLabel {
-  @apply text-[9px] font-black text-gray-700 group-hover:text-white transition;
+  @apply text-[9px] font-black text-gray-700 transition;
+}
+
+.chartBarContainer:hover .chartBarLabel {
+  @apply text-white;
 }
 
 /* Routine Card */
 .routineCard {
-  @apply bg-gradient-to-br from-[#4D6CFA] to-blue-800 p-8 md:p-10 rounded-[45px] shadow-2xl shadow-blue-500/10 h-full flex flex-col justify-between relative overflow-hidden group;
+  @apply bg-gradient-to-br from-[#4D6CFA] to-blue-800 p-8 md:p-10 rounded-[45px] shadow-2xl shadow-blue-500/10 h-full flex flex-col justify-between relative overflow-hidden;
 }
 
 .routineIcon {
-  @apply absolute -right-12 -bottom-12 text-white/10 -rotate-12 group-hover:rotate-0 transition-transform duration-700;
+  @apply absolute -right-12 -bottom-12 text-white/10 -rotate-12 transition-transform duration-700;
+}
+
+.routineCard:hover .routineIcon {
+  @apply rotate-0;
 }
 
 .routineBadge {

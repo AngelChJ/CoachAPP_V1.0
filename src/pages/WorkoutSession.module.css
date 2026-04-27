@@ -1,3 +1,4 @@
+
 @reference "tailwindcss";
 
 .container {
@@ -153,7 +154,7 @@
 }
 
 .finishBtnActive {
-  @apply bg-white text-black shadow-[0_20px_50px_rgba(255, 255, 255, 0.2)] hover:scale-[1.02];
+  @apply bg-white text-black shadow-[0_20px_50px_rgba(255,255,255,0.2)] hover:scale-[1.02];
 }
 
 .finishBtnDisabled {

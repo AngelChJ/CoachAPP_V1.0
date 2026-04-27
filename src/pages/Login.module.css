@@ -1,3 +1,4 @@
+
 @reference "tailwindcss";
 
 .container {
@@ -95,15 +96,15 @@
 }
 
 .inputBase {
-  @apply w-full bg-[#0D0D0D] border rounded-2xl py-4 pl-12 pr-4 text-white placeholder-gray-600 transition-all duration-300 focus:outline-none focus:ring-4;
+  @apply w-full bg-[#0D0D0D] border rounded-2xl py-4 pl-12 pr-4 text-white placeholder-gray-600 transition-all duration-300 focus:outline-none focus:border-[#4D6CFA] focus:shadow-[0_0_20px_rgba(77,108,250,0.2)];
 }
 
 .inputError {
-  @apply border-red-500/50 focus:ring-red-500/10 focus:shadow-[0_0_20px_rgba(239, 68, 68, 0.2)];
+  @apply border-red-500/50 focus:ring-red-500/10 focus:shadow-[0_0_20px_rgba(239,68,68,0.2)];
 }
 
 .inputNormal {
-  @apply border-white/10 focus:border-[#4D6CFA] focus:ring-[#4D6CFA]/10 focus:shadow-[0_0_20px_rgba(77, 108, 250, 0.3)];
+  @apply border-white/10 focus:border-[#4D6CFA] focus:ring-[#4D6CFA]/10 focus:shadow-[0_0_20px_rgba(77,108,250,0.3)];
 }
 
 .submitBtnBase {

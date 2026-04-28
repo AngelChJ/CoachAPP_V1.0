@@ -4,7 +4,7 @@ export const COACH_WHATSAPP = '521XXXXXXXXXX'; // código de país + número, si
 
 export const SOCIAL_LINKS = {
   whatsapp: `https://wa.me/${COACH_WHATSAPP}`,
-  instagram: 'https://instagram.com/charlycoach', // Reemplazar con el real
+  instagram: 'https://instagram.com/04carlosr', // Reemplazar con el real
 } as const;
 
 export const getWhatsAppLink = (message: string) =>

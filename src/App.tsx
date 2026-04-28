@@ -3,8 +3,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import WorkoutSession from './pages/WorkoutSession';
-import Historial from './pages/record'; // <-- IMPORTA EL NUEVO COMPONENTE
-import Perfil from './pages/Perfil'; // <-- IMPORTA EL PERFIL
+import Record from './pages/Record';
+import Perfil from './pages/Perfil';
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/session" element={<WorkoutSession />} />
-        <Route path="/perfil" element={<Perfil />} /> {/* <-- 2. AGREGA ESTA RUTA */}
-        <Route path="/record" element={<Historial />} /> {/* <-- AGREGAR ESTA LÍNEA */}
+        <Route path="/perfil" element={<Perfil />} />
+        <Route path="/record" element={<Record />} />
       </Routes>
     </Router>
   );

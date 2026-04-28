@@ -78,7 +78,8 @@ export const ExerciseCard = ({
               <div 
                 key={i}
                 className={`h-2 w-8 rounded-full transition-all duration-300 
-                  ${i < setsDone ? 'bg-[#4D6CFA] shadow-[0_0_10px_#4D6CFA]' : 'bg-white/10'}`}
+                  ${i < setsDone ? 'bg-[#4D6CFA]' : 'bg-white/10'}`}
+              style={i < setsDone ? { boxShadow: '0 0 10px #4D6CFA' } : undefined}
               />
             ))}
           </div>
@@ -91,10 +92,11 @@ export const ExerciseCard = ({
         <button 
           onClick={handleSetClick}
           disabled={isFinished}
+          style={!isFinished ? { boxShadow: '0 10px 30px rgba(255, 255, 255, 0.2)' } : undefined}
           className={`w-full py-5 rounded-[25px] font-black uppercase text-xs tracking-[0.2em] transition-all flex items-center justify-center gap-3
             ${isFinished 
               ? 'bg-transparent border border-green-500/50 text-green-500' 
-              : 'bg-white text-black shadow-[0_10px_30px_rgba(255,255,255,0.2)] hover:scale-[1.02] active:scale-95'}`}
+              : 'bg-white text-black hover:scale-[1.02] active:scale-95'}`}
         >
           {isFinished ? (
             <><CheckCircle2 size={18} /> Ejercicio Terminado</>

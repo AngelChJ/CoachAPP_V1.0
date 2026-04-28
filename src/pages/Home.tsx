@@ -6,29 +6,31 @@ import {
   Zap, 
   Dumbbell, 
   ShieldCheck, 
-  Globe, 
+  MessageCircle, 
   Camera 
 } from 'lucide-react';
 import { TarjetaPrograma, TarjetaPrecio } from '../components/Tarjetas';
+import { getWhatsAppLink, SOCIAL_LINKS } from '../config';
+import type { Programa, Plan } from '../types';
 import styles from './Home.module.css';
+
+const programas: Programa[] = [
+  { titulo: "Fuerza Cardio", desc: "Mejora tu potencia y resistencia con circuitos de alta intensidad.", icono: <Zap size={24} /> },
+  { titulo: "Pérdida de Grasa", desc: "Protocolos enfocados en maximizar la quema calórica y definición.", icono: <Activity size={24} /> },
+  { titulo: "Ganancia Muscular", desc: "Planes de hipertrofia con técnicas de sobrecarga progresiva.", icono: <Dumbbell size={24} /> },
+  { titulo: "Nutrición", desc: "Guías alimenticias para potenciar tu recuperación y energía.", icono: <Heart size={24} /> }
+];
+
+const planes: Plan[] = [
+  { id: 0, nombre: "Plan Estándar", precio: "800", beneficios: ["Acceso al gym", "Rutina base", "Seguimiento quincenal"] },
+  { id: 1, nombre: "Plan Premium", precio: "1200", beneficios: ["Acceso 24/7", "Dieta personalizada", "Coach por WhatsApp", "App de seguimiento"] },
+  { id: 2, nombre: "Plan Avanzado", precio: "1800", beneficios: ["Todo lo anterior", "Análisis biométrico", "Suplementación", "Sesión 1 a 1"] }
+];
 
 const Home = () => {
   // --- ESTADOS DE INTERACTIVIDAD ---
   const [progActivo, setProgActivo] = useState(0);
   const [planSeleccionado, setPlanSeleccionado] = useState(1);
-
-  const programas = [
-    { titulo: "Fuerza Cardio", desc: "Mejora tu potencia y resistencia con circuitos de alta intensidad.", icono: <Zap size={24} /> },
-    { titulo: "Pérdida de Grasa", desc: "Protocolos enfocados en maximizar la quema calórica y definición.", icono: <Activity size={24} /> },
-    { titulo: "Ganancia Muscular", desc: "Planes de hipertrofia con técnicas de sobrecarga progresiva.", icono: <Dumbbell size={24} /> },
-    { titulo: "Nutrición", desc: "Guías alimenticias para potenciar tu recuperación y energía.", icono: <Heart size={24} /> }
-  ];
-
-  const planes = [
-    { id: 0, nombre: "Plan Estándar", precio: "800", beneficios: ["Acceso al gym", "Rutina base", "Seguimiento quincenal"] },
-    { id: 1, nombre: "Plan Premium", precio: "1200", beneficios: ["Acceso 24/7", "Dieta personalizada", "Coach por WhatsApp", "App de seguimiento"] },
-    { id: 2, nombre: "Plan Avanzado", precio: "1800", beneficios: ["Todo lo anterior", "Análisis biométrico", "Suplementación", "Sesión 1 a 1"] }
-  ];
 
   return (
     <div className={styles.container}>
@@ -56,9 +58,14 @@ const Home = () => {
           Entrenamiento de élite y nutrición inteligente. Resultados reales para personas reales.
         </p>
         <div className={styles.heroActions}>
-          <button className={styles.heroBtn}>
-            Comenzar Proceso
-          </button>
+          <a
+            href={getWhatsAppLink('Hola Coach, vi tu página y quiero comenzar mi proceso 💪')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.heroBtn}
+          >
+            Escríbeme por WhatsApp 💬
+          </a>
         </div>
       </header>
 
@@ -79,7 +86,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SECCIÓN MEMBRESÍAS (Con Brillo y Tarjetas Largas) */}
+      {/* SECCIÓN MEMBRESÍAS */}
       <section id="planes" className={styles.plansSection}>
         <div className={styles.plansContainer}>
           <h2 className={styles.plansTitle}>Nuestros Planes</h2>
@@ -119,8 +126,12 @@ const Home = () => {
               "No busco clientes, busco resultados. Si estás dispuesto a trabajar duro, yo te daré el camino exacto hacia tu mejor versión."
             </p>
             <div className={styles.coachSocials}>
-              <button className={styles.socialBtn}><Camera size={24}/></button>
-              <button className={styles.socialBtn}><Globe size={24}/></button>
+              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className={styles.socialBtn}>
+                <Camera size={24}/>
+              </a>
+              <a href={getWhatsAppLink('Hola Coach, quiero más información sobre tus planes 💪')} target="_blank" rel="noopener noreferrer" className={styles.socialBtn}>
+                <MessageCircle size={24}/>
+              </a>
             </div>
           </div>
         </div>

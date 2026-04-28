@@ -1,35 +1,6 @@
 
 @reference "tailwindcss";
 
-.container {
-  @apply min-h-screen bg-[#0D0D0D] text-white flex font-sans;
-}
-
-/* Sidebar */
-.sidebar {
-  @apply hidden lg:flex w-72 bg-[#111] border-r border-white/5 flex-col p-8 sticky top-0 h-screen;
-}
-
-.logo {
-  @apply text-2xl font-black tracking-tighter italic mb-12;
-}
-
-.logoAccent {
-  @apply text-[#4D6CFA];
-}
-
-.nav {
-  @apply space-y-6 flex-1;
-}
-
-.navLinkActive {
-  @apply flex items-center gap-4 text-[#4D6CFA] font-bold;
-}
-
-.navLink {
-  @apply flex items-center gap-4 text-gray-500 hover:text-white transition font-bold;
-}
-
 .progressWidget {
   @apply mt-auto bg-blue-500/10 p-6 rounded-[30px] border border-blue-500/20;
 }
@@ -56,11 +27,6 @@
 
 .progressBarFill {
   @apply h-full bg-[#4D6CFA] transition-all duration-700;
-}
-
-/* Main Content */
-.main {
-  @apply flex-1 pb-32 lg:pb-12;
 }
 
 .header {
@@ -154,26 +120,15 @@
 }
 
 .finishBtnActive {
-  @apply bg-white text-black shadow-[0_20px_50px_rgba(255,255,255,0.2)] hover:scale-[1.02];
+  @apply bg-white text-black hover:scale-[1.02];
+  box-shadow: 0 20px 50px rgba(255, 255, 255, 0.2);
 }
 
 .finishBtnDisabled {
   @apply bg-white/5 text-gray-700 cursor-not-allowed;
 }
 
-/* Mobile Nav */
-.mobileNav {
-  @apply lg:hidden fixed bottom-0 left-0 right-0 bg-[#0D0D0D]/90 backdrop-blur-xl border-t border-white/5 px-8 py-6 z-50 flex justify-between items-center text-gray-500;
-}
-
-.mobileNavLink {
-  @apply hover:text-white transition;
-}
-
-.mobileNavActive {
-  @apply text-[#4D6CFA];
-}
-
+/* Mobile Nav - page specific */
 .mobileFinishBtnBase {
   @apply w-14 h-14 rounded-2xl -mt-14 flex items-center justify-center shadow-xl transition-all;
 }

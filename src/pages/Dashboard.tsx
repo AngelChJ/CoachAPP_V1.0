@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Flame, Clock, Target, Play, Dumbbell, User } from 'lucide-react';
 import { AppLayout } from '../components/AppLayout';
 import styles from './Dashboard.module.css';
@@ -10,10 +10,22 @@ const stats = [
 ];
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Confirmación antes de salir
+    if (window.confirm("¿Seguro que quieres salir, Coach?")) {
+      // Eliminas la "llave" del localStorage
+      localStorage.removeItem('user');
+      // Navegas a la página de inicio (Login/Home)
+      navigate('/');
+    }
+  };
+
   return (
     <AppLayout
       sidebarFooter={
-        <button className={styles.logoutBtn}>Cerrar Sesión</button>
+        <button className={styles.logoutBtn} onClick={handleLogout}>Cerrar Sesión</button>
       }
       mobileCenterButton={
         <Link to="/session" className={styles.mobileNavCenter}>

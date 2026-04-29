@@ -7,7 +7,7 @@
 
 
 .header {
-  @apply p-6 md:p-12 max-w-7xl mx-auto w-full;
+  @apply p-6 pb-44 md:p-12 md:pb-12 max-w-7xl mx-auto w-full;
 }
 
 .topHeader {

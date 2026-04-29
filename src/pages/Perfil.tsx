@@ -1,6 +1,7 @@
-import { 
-  Trophy, TrendingUp, Calendar, Award, 
-  ChevronRight, Camera, Settings, User
+import { useNavigate } from 'react-router-dom';
+import {
+  Trophy, TrendingUp, Calendar, Award,
+  ChevronRight, Camera, Settings, User, LogOut
 } from 'lucide-react';
 import { AppLayout } from '../components/AppLayout';
 import type { PersonalRecord } from '../types';
@@ -13,11 +14,20 @@ const personalRecords: PersonalRecord[] = [
 ];
 
 const Perfil = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    if (window.confirm("¿Seguro que quieres salir, Coach?")) {
+      localStorage.removeItem('user');
+      navigate('/');
+    }
+  };
+
   return (
     <AppLayout
       sidebarFooter={
         <button className={styles.settingsBtn}>
-          <Settings size={16}/> Ajustes
+          <Settings size={16} /> Ajustes
         </button>
       }
       mobileCenterButton={
@@ -37,7 +47,7 @@ const Perfil = () => {
               <Camera size={20} />
             </button>
           </div>
-          
+
           <div className={styles.userInfo}>
             <div className={styles.nameWrapper}>
               <h1 className={styles.name}>Angel <span className={styles.nameLast}>Reyes</span></h1>
@@ -54,7 +64,7 @@ const Perfil = () => {
 
         {/* GRID DE MÓDULOS */}
         <div className={styles.grid}>
-          
+
           {/* SECCIÓN PRs */}
           <div className={styles.col7}>
             <div className={styles.prCardHeader}>
@@ -83,13 +93,13 @@ const Perfil = () => {
               <div className={styles.heatmapHeader}>
                 <h2 className={styles.heatmapTitle}>Consistencia</h2>
                 <div className={styles.heatmapLegend}>
-                  {[1,2,3,4,5].map(i => <div key={i} className={`${styles.heatmapLegendItem} ${i > 2 ? styles.heatmapLegendActive : styles.heatmapLegendInactive}`} />)}
+                  {[1, 2, 3, 4, 5].map(i => <div key={i} className={`${styles.heatmapLegendItem} ${i > 2 ? styles.heatmapLegendActive : styles.heatmapLegendInactive}`} />)}
                 </div>
               </div>
               <div className={styles.heatmapGrid}>
                 {Array.from({ length: 28 }).map((_, i) => (
-                  <div 
-                    key={i} 
+                  <div
+                    key={i}
                     className={`${styles.heatmapBox} ${i % 3 === 0 ? styles.heatmapBoxHigh : i % 5 === 0 ? styles.heatmapBoxMed : styles.heatmapBoxLow}`}
                   />
                 ))}
@@ -139,6 +149,13 @@ const Perfil = () => {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* MÓVIL: BOTÓN CERRAR SESIÓN */}
+          <div className="md:hidden col-span-1 mt-12">
+            <button className={styles.mobileLogoutBtn} onClick={handleLogout}>
+              <LogOut size={16} /> Cerrar Sesión
+            </button>
           </div>
 
         </div>

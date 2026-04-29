@@ -8,6 +8,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(''); // Para mostrar mensajes de error
   const [isLoading, setIsLoading] = useState(false); // Simular carga
+  const [intentos, setIntentos] = useState(0); // Contador de intentos fallidos
 
   const navigate = useNavigate();
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -21,6 +22,13 @@ const Login = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Si ya llegó a 3 intentos, podemos bloquear que lo intente de nuevo
+    if (intentos >= 3) {
+      setError(`Acceso denegado. Has superado los 3 intentos.`);
+      return;
+    }
+    
     setError('');
 
     // Validaciones básicas que ya teníamos...
@@ -42,9 +50,17 @@ const Login = () => {
 
       // Credenciales de prueba
       if (email === "atleta@fit-tribe.com" && password === "password123") {
+        setIntentos(0); // Reiniciamos si entra bien
         navigate('/dashboard');
       } else {
-        setError('Credenciales incorrectas. Intenta de nuevo.');
+        const nuevosIntentos = intentos + 1;
+        setIntentos(nuevosIntentos);
+        
+        if (nuevosIntentos >= 3) {
+          setError(`Acceso denegado. Intentos fallidos: ${nuevosIntentos}`);
+        } else {
+          setError(`Credenciales incorrectas. Te quedan ${3 - nuevosIntentos} intento(s).`);
+        }
       }
     }, 1500);
   };
@@ -96,7 +112,7 @@ const Login = () => {
                 placeholder="atleta@fit-tribe.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                disabled={isLoading}
+                disabled={isLoading || intentos >= 3}
               />
             </div>
           </div>
@@ -111,17 +127,17 @@ const Login = () => {
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                disabled={isLoading}
+                disabled={isLoading || intentos >= 3}
               />
             </div>
           </div>
 
           <button
             type="submit"
-            disabled={isLoading}
-            className={`${styles.submitBtnBase} ${isLoading ? styles.submitBtnLoading : styles.submitBtnActive}`}
+            disabled={isLoading || intentos >= 3}
+            className={`${styles.submitBtnBase} ${(isLoading || intentos >= 3) ? styles.submitBtnLoading : styles.submitBtnActive}`}
           >
-            {isLoading ? 'VERIFICANDO...' : 'ENTRAR AL PANEL'}
+            {intentos >= 3 ? 'ACCESO BLOQUEADO' : isLoading ? 'VERIFICANDO...' : 'ENTRAR AL PANEL'}
           </button>
         </form>
       </div>
